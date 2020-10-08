@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link href="styles.css" rel="stylesheet">
+      <script src="jquery-3.5.1.min.js"></script>
+      <title>Welcome to Miku e-SKpo </title>
+      
+  </head>
+  <body>
+    <div class="page-container">
+      
+      <header class="main-header">
+        <div class="menu"> 
+          <ul>
+            <li class="logo"><img src="Assets/Logo.png"></li>
+            <li><a href="Home.html">Home</a></li>
+            <li><a href="About.html">About</a></li>
+            <li><a href="Gallery.html">Gallery</a></li>
+            <div class="dropdown">
+              <button class="dropbtn">Store
+                <i class="fa fa-caret-down"></i>
+              </button>
+              <div class="dropdown-content">
+                <a href="BuyTicket.html">Buy Ticket</a>
+                <a href="MerchStore.html">Merch Store</a>
+              </div>
+            </div>
+        </div>
+      </header>
+  
+      <div class="content">
+        <!-- Isi halamannya disini -->
+        <center>
+          <h2>Home Page </h2>
+          <br>
+        </center>
+                
+        <left>
+          <h3>Latest Event</h3>
+          <hr>
+          <br>
+        </left>
+
+        <div class="slideshow-container">
+            
+          <div>
+            <div id="mySlides" class="active">
+              <img src="Assets/latestEvent1.jpg" style="width:100%">
+              <div class="text" id="text1">
+                <div class="kota">BANDUNG</div>
+                <div class="tempat">BANDUNG INDAH PLAZA</div>
+                <div class="tanggal">DATE : 24 DESEMBER 2020</div>
+                <div class="waktu">TIME : 14.00</div>
+              </div>
+            </div>
+            <div id="mySlides">
+              <img src="Assets/latestEvent2.jpg" style="width:100%">
+              <div class="text" id="text2">
+                <div class="kota">TANGERANG</div>
+                <div class="tempat">MALL LIVING WORLD</div>
+                <div class="tanggal">DATE : 14 FEBRUARY 2021</div>
+                <div class="waktu">TIME : 15.00</div>
+              </div>
+            </div>
+            <div id="mySlides">
+              <img src="Assets/latestEvent3.jpg" style="width:100%">
+              <div class="text" id="text1">
+                <div class="kota">JAKARTA</div>
+                <div class="tempat">MALL TAMAN ANGGREK</div>
+                <div class="tanggal">DATE : 24 MAY 2021</div>
+                <div class="waktu">TIME : 16.00</div>
+              </div>
+            </div>
+          </div>
+          <a id="prev">&#10094;</a>
+          <a id="next">&#10095;</a>
+        </div>
+        <br>
+
+        <left>
+          <h3>Our Highlights</h3>
+          <hr>
+          <br>
+        </left>
+
+        <div class="slideshow-container">
+            
+          <div>
+            <div id="mySlides" class="activated">
+              <img src="Assets/gallery-8.jpg" style="width:100%">
+            </div>
+            <div id="mySlides">
+              <img src="Assets/gallery-9.jpg" style="width:100%">
+            </div>
+            <div id="mySlides">
+              <img src="Assets/gallery-14.jpg" style="width:100%">
+            </div>
+            <div id="mySlides">
+              <img src="Assets/gallery-12.jpg" style="width:100%">
+            </div>
+            <div id="mySlides">
+              <img src="Assets/gallery-5.jpg" style="width:100%">
+            </div>
+            <div id="mySlides">
+              <img src="Assets/gallery-6.jpg" style="width:100%">
+            </div>
+            <div id="mySlides">
+              <img src="Assets/gallery-10.jpg" style="width:100%">
+            </div>
+          </div>
+          <a id="previous">&#10094;</a>
+          <a id="nextSlide">&#10095;</a>
+          <a href="Gallery.html" class="viewMore">View More -></a>
+        </div>
+        <br>
+
+      </div>
+      <br>
+      <br>
+      <footer>
+        <!-- Footer main -->
+        <section class="ft-main">
+          <div class="ft-main-item">
+            <h2 class="ft-title">More about us</h2>
+            <ul>
+              <li><a href="About.html">Our Company Profile</a></li>                          
+            </ul>
+          </div>
+                        
+          <div class="ft-main-item">
+            <h2 class="ft-title">Stay Updated</h2>
+            <p>Subscribe to our email notification to know our latest event.</p>
+            <form>
+              <input type="email" name="email" placeholder="Enter email address">
+              <input type="submit" value="Subscribe">
+            </form>
+          </div>
+        </section>
+                   
+        <!-- Footer social -->
+        <section class="ft-social">
+          <ul class="ft-social-list">
+            <li><a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a></li>
+            <li><a href="https://www.twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="https://www.youtube.com/" target="_blank"><i class="fab fa-youtube"></i></a></li>
+          </ul>
+        </section>
+                   
+        <!-- Footer legal -->
+        <section class="ft-legal">
+          <ul class="ft-legal-list">              
+            &copy; 2020 Copyright Miku e-SKpo. All Rights Reserved.            
+          </ul>
+        </section>
+      </footer>
+    </div>
+
+    <script>
+
+      $(document).ready(function(){
+
+        $('#next').click(function(){
+          var currDiv = $('.active')
+          var nextDiv = currDiv.next();
+          if(nextDiv.length){
+            $('.active').animate({
+              opacity : 0
+          }, 500);
+            currDiv.removeClass('active');
+            nextDiv.addClass('active');
+            $('.active').animate({
+              opacity : 1
+            }, 500);
+          }
+        })
+
+        $('#prev').click(function(){
+          var currDiv = $('.active')
+          var prevDiv = currDiv.prev();
+          if(prevDiv.length){
+            $('.active').animate({
+              opacity : 0
+            }, 500);
+            currDiv.removeClass('active');
+            prevDiv.addClass('active');
+            $('.active').animate({
+              opacity : 1
+            }, 500);
+          }
+        })
+
+        $('#nextSlide').click(function(){
+          var currDiv = $('.activated')
+          var nextDiv = currDiv.next();
+          if(nextDiv.length){
+            $('.activated').animate({
+              opacity : 0
+            }, 500);
+            currDiv.removeClass('activated');
+            nextDiv.addClass('activated');
+            $('.activated').animate({
+              opacity : 1
+            }, 500);
+          }
+        })
+
+        $('#previous').click(function(){
+          var currDiv = $('.activated')
+          var prevDiv = currDiv.prev();
+          if(prevDiv.length){
+            $('.activated').animate({
+              opacity : 0
+            }, 500);
+            currDiv.removeClass('activated');
+            prevDiv.addClass('activated');
+            $('.activated').animate({
+              opacity : 1
+            }, 500);
+          }
+        })
+
+      });
+
+    </script>
+
+  </body>
+</html>
